@@ -1,0 +1,93 @@
+.comment {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  & > img {
+    /* o calculo a baixo se da por conta da borda, por estar border box, o box sizing ele expremeu a imagem,e  pra reverter uma forma é utilizando o calc, calculamos os espaços laterais, direita e esquerda somando 4+4+2+2 = 12px */
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px; /* geralmente se utiliza com medida fixas, pois se não pode ficar mais arredondado que o necessário ou menos */
+  }
+
+  & .commentBox {
+    /*  quando há uma div por volta que tem display flex e colocamos a propriedade a baixo flex: 1; faz com que a div ocupe todo o espaço possivel.*/
+    flex: 1;
+
+    & .commentContent {
+      background-color: var(--gray-700);
+      border-radius: 8px;
+      padding: 1rem;
+
+      & header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        & button {
+          background-color: transparent;
+          border: 0;
+          color: var(--gray-400);
+          cursor: pointer;
+
+          /* o trexo a baixo é para a navegação com tabs, inicialmente ao navegar com tab, estava desalinhado o outline que implementamos no focus, e para alinha-lo podemos fazer tanto com o line hight quanto com font-size, ambos sendo igual a 0, e para fazermos isso de uma forma arredondada */
+          line-height: 0;
+          border-radius: 2px;
+          transition: color 0.2s;
+
+          &:hover {
+            color: var(--red-500);
+          }
+        }
+
+        & .authorAndTime {
+          & strong {
+            display: block;
+            font-size: 0.8rem;
+            line-height: 1.6;
+          }
+
+          & time {
+            display: block;
+            font-size: 0.75rem;
+            line-height: 1.6;
+            color: var(--gray-400);
+          }
+        }
+      }
+
+      & p {
+        margin-top: 1rem;
+        color: var(--gray-300);
+      }
+    }
+
+    & footer {
+      margin-top: 1rem;
+
+      & button {
+        background: transparent;
+        border: 0;
+        color: var(--gray-400);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: var(--orange-300);
+        }
+
+        & svg {
+          margin-right: 0.5rem;
+        }
+
+        & span::before {
+          /* aqui colocamos o before com o content sendo esse \2022, ele é um ponto que é a separação entre o aplaudir e a quantidade de aplausos */
+          content: "\2022";
+          padding: 0 0.25rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem; /* faz com que se diminuir a tela os conteudos não colem na borda mas fiquem com um espaçamento */
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start; /* ao colocar essa propriedade faz com que elemento ele suba e ocupe o necessário, se não colocarmos, eles tentarão ocupar ambos o mesmo tamanho e ficarão esticados  */
+  
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+
+  }
+}

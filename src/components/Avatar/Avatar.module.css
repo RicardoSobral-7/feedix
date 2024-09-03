@@ -1,0 +1,18 @@
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.avatarWithBorder {
+  /* o calculo a baixo se da por conta da borda, por estar border box, o box sizing ele expremeu a imagem,e  pra reverter uma forma é utilizando o calc, calculamos os espaços laterais, direita e esquerda somando 4+4+2+2 = 12px */
+  width: calc(3rem + 12px);
+  height: calc(3rem + 12px);
+  border-radius: 8px; /* geralmente se utiliza com medida fixas, pois se não pode ficar mais arredondado que o necessário ou menos */
+
+  border: 4px solid var(--gray-800);
+  /* para fazermos a outra borda em volta para dar o efeito, vamos utilizar o outline, ele vai fazer uma "borda na borda" */
+  outline: 2px solid var(--orange-500);
+}
+
+
